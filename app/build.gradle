@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+android {
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+    compileSdkVersion 28
+    buildToolsVersion "29.0.0"
+    defaultConfig {
+        applicationId "com.diet.trinity"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //recyclerview
+    implementation "com.android.support:recyclerview-v7:28.0.0"
+
+    //cardview
+    implementation 'com.android.support:cardview-v7:28.0.0'
+
+    //ion
+    implementation 'com.koushikdutta.ion:ion:2.+'
+    //round image
+    implementation 'de.hdodenhof:circleimageview:3.0.0' //round image
+    //image picker
+    implementation 'com.github.esafirm.android-image-picker:imagepicker:1.13.0'
+    implementation 'com.github.esafirm.android-image-picker:rximagepicker:1.13.0'
+    implementation 'com.github.bumptech.glide:glide:4.5.0'
+
+    //date picker
+    implementation "com.github.wisnukurniawan:date-time-range-picker-android:1.0.6"
+    implementation 'net.danlew:android.joda:2.10.6'
+    //masked text
+    implementation 'ru.egslava:MaskedEditText:1.0.5'
+    //seek bar
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+
+    //accordion control
+    implementation 'it.sysdata.mobile:fancyaccordionview:1.0.1'
+
+    //Line chart
+    implementation 'com.jjoe64:graphview:4.2.2'
+
+    //paypal
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
+
+    //volley
+    implementation 'com.android.volley:volley:1.1.1'
+}

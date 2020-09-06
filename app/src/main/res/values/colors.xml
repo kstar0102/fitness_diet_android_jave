@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2ea3f2</color>
+    <color name="colorPrimaryDark">#007fe8</color>
+    <color name="colorAccent">#0d80c1</color>
+    <color name="colorCancel">#EB8E5C</color>
+
+    <color name="colorPink">#f40d84</color>
+    <color name="colorPinkDark">#c10c8e</color>
+    <color name="colorOrange">#F49367</color>
+    <color name="colorOrangeDark">#F45972</color>
+    <color name="colorBlue">#177995</color>
+    <color name="colorBlueDark1">#475893</color>
+    <color name="colorBlueDark2">#644492</color>
+    <color name="colorYellow">#FFF000</color>
+
+    <color name="colorMainBackground">#EDF4FA</color>
+    <color name="colorText1">#3d4c66</color>
+    <color name="colorText2">#9a9a9c</color>
+    <color name="colorText3">#70849C</color>
+    <color name="colorTextDescription">#7b7c7a</color>
+    <color name="colorLine">#DEDFDC</color>
+
+    <color name="csTextColor">#c10c8e</color>
+    <color name="dayTextColor">#000000</color>
+
+</resources>

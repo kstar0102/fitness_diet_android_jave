@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android = "http://schemas.android.com/apk/res/android"
+xmlns:app = "http://schemas.android.com/apk/res-auto"
+xmlns:tools = "http://schemas.android.com/tools"
+android:layout_width = "match_parent"
+android:layout_height = "match_parent"
+tools:context=".activity.LineChartActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="100"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/space_20"
+        android:paddingTop="@dimen/space_10"
+        android:paddingRight="@dimen/space_20"
+        android:paddingBottom="@dimen/space_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="Today    "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="30 adsfas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="100"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/space_15"
+            android:paddingBottom="@dimen/space_15">
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/initialWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="initialWeight : "
+                    android:textStyle="bold"
+                    tools:text="initialWeight : " />
+
+                <TextView
+                    android:id="@+id/initialWeight_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="102.2kg" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/idealWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="idealWeight : "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/idealWeight_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="97.0kg"
+                    android:textColor="#4CAF50" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/todayWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Today's Weight : "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/todayWeight_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="102.0kg" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/difference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Difference : "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/difference_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="-0.2kg" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:background="@drawable/back_shadow">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_60"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgMain"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_40"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_weight="1"
+                android:src="@drawable/ic_diary_icon3" />
+
+            <ImageView
+                android:id="@+id/imgRecipe"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_40"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/ic_recipes_icon3" />
+
+            <ImageView
+                android:id="@+id/imgSetting"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_40"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/ic_settings_icon3" />
+
+            <ImageView
+                android:id="@+id/imgHelp"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_40"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/space_30"
+                android:layout_weight="1"
+                android:src="@drawable/ic_help_icon2" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

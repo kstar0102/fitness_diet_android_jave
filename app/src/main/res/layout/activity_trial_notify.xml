@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_60"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/black"
+                android:text="Δοκιμαστική Περίοδος"/>
+        </RelativeLayout>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabMembership"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/tabTrail"
+                android:text="ΠΕΡΙΟΡΙΣΜΕΝΗ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/tabPremium"
+                android:text="ΑΠΕΡΙΟΡΙΣΤΗ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </android.support.design.widget.TabLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorText2"/>
+        <RelativeLayout
+            android:id="@+id/linTrial"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_40"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Η εφαρμογή βρίσκεται σε δοκιμαστική περίοδο για 24 ώρες.  Μετά θα παύση να λειτουργεί και θα πρέπει να την αγοράσετε."/>
+            <ImageView
+                android:id="@id/imgNext"
+                android:layout_width="@dimen/space_150"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/space_40"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_next"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/linPremium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_40"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Ξεκλειδώστε την εφαρμογή για να μπορέσετε να ολοκληρώσετε το σχέδιο διατροφής σας.  Η εφαρμογή κοστίζει 3 ευρώ τον μήνα ή 30 ευρώ τον χρόνο."/>
+            <ImageView
+                android:id="@+id/imgNext2"
+                android:layout_width="@dimen/space_150"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/space_40"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_pay_button_next"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</ScrollView>

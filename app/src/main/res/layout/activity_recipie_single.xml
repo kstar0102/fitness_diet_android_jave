@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_60"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imgDownload"
+            android:layout_width="@dimen/space_33"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/space_30"
+            android:src="@drawable/ic_download"/>
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/space_25"
+            android:layout_height="@dimen/space_20"
+            android:layout_marginLeft="@dimen/space_25"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorText2"/>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_200"
+                    android:src="@drawable/back_recipe1"
+                    android:scaleType="centerCrop"/>
+                <ImageView
+                    android:id="@+id/imgPlus"
+                    android:layout_width="@dimen/space_50"
+                    android:layout_height="@dimen/space_50"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:layout_marginLeft="@dimen/space_30"
+                    android:src="@drawable/ic_add_recipe"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:layout_marginTop="@dimen/space_20"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:text="Φρουτοσαλάτα με επιλεγμένα φρούτα και σάλτσα από φράουλα"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/black"
+                        android:text="Υλικά Συνταγής"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/black"
+                        android:text="2 points / 3 units"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/black"
+                        android:text=" Πρώτο Υλικό \n Δεύτερο Υλικό \n Τρίτο Υλικό \n Τέταρτο Υλικό \n Πέμπτο Υλικό \n Έκτο Υλικό \n Έβδομο Υλικό \n Όγδοο Υλικό \n Ένατο Υλικό"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/black"
+                        android:textAlignment="textEnd"
+                        android:text="150gr\n12gr\n32gr\n40gr\n100gr\n50gr\n10gr\n5gr\n20gr"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Μέθοδος Εκτέλεσης"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Για τη σάλτσα"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/black"
+                        android:text="Ξεφλουδίζουμε το μήλο και αφαιρούμε τα κουκούτσια. Το κόβουμε σε φέτες 1 εκ. και στη συνέχεια σε κυβάκια.
+Ξεφλουδίζουμε 2 μπανάνες και τις κόβουμε σε ροδέλες 1 εκ.
+Προσθέτουμε τα μήλα και τις μπανάνες σε μία κατσαρόλα και βάζουμε τον χυμό από το λεμόνι.
+Βάζουμε το μέλι, το εκχύλισμα βανίλιας, το νερό και σιγοβράζουμε 5-10 λεπτά μέχρι να λιώσει το μήλο.
+Μεταφέρουμε τη σάλτσα στο πολυμηχάνημα με τα μαχαίρια και χτυπάμε μέχρι να πολτοποιηθεί το μείγμα.
+Βάζουμε σε ένα μπολ και αφήνουμε στην άκρη να κρυώσει.
+Αν δεν θέλουμε να τη χρησιμοποιήσουμε αμέσως μπορούμε να τη βάλουμε στο ψυγείο. Διατηρείται για 1 εβδομάδα.
+"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Για τη σαλάτα"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginBottom="@dimen/space_20"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/black"
+                        android:text="Αφαιρούμε το κοτσάνι από τις φράουλες και τις κόβουμε σε λεπτές ροδέλες.
+Βάζουμε με ένα κουτάλι λίγη σάλτσα φρούτων στην πιατέλα σερβιρίσματος και την απλώνουμε σε όλη την επιφάνειά της.
+Απλώνουμε τις φράουλες σε όλη την επιφάνεια της σάλτσας.
+Με τα μύρτιλα σχηματίζουμε τον ιστό.
+Κόβουμε τα blackberries στη μέση και τη μπανάνα κατά μήκος"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

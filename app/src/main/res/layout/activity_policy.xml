@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_60"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_30"
+            android:textSize="22sp"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/black"
+            android:text="Όροι Χρήσης"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorText2"/>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/space_20"
+            android:layout_marginRight="@dimen/space_20"
+            android:orientation="vertical">
+            <com.sysdata.widget.accordion.FancyAccordionView
+                android:id="@+id/alarms_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/space_10"
+                android:clipToPadding="false"
+                android:descendantFocusability="beforeDescendants"
+                android:fadingEdgeLength="0dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="vertical"
+                android:splitMotionEvents="false"
+                tools:listitem="@layout/sample_layout_collapsed"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

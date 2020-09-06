@@ -1,0 +1,2164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_60"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/space_30"
+            android:text="Σήμερα"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/txtWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_10"
+            android:layout_toLeftOf="@+id/imgCalendar"
+            android:text="Εβδομάδα 1"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/imgCalendar"
+            android:layout_width="@dimen/space_40"
+            android:layout_height="@dimen/space_40"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_30"
+            android:src="@drawable/ic_calendar_settings" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorText2" />
+
+    <ScrollView
+        android:id="@+id/screen"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_250"
+                android:background="@drawable/back_overview_bg"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/deltaUnits"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_40"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:text="-2"
+                        android:textColor="@color/colorPinkDark"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/deltaWeight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 1.2"
+                                android:textColor="@android:color/white"
+                                android:textSize="45sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/space_15"
+                                android:text="Kg"
+                                android:textColor="@android:color/white"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/loseAlert"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:text="Έχεις χάσει κιλά!"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgBalerinaPoint"
+                        android:layout_width="@dimen/space_35"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_1"
+                        android:layout_marginRight="@dimen/space_40"
+                        android:layout_toLeftOf="@+id/center"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_balerina_white" />
+
+                    <ImageView
+                        android:id="@+id/imgBalerinaUnit"
+                        android:layout_width="@dimen/space_35"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_40"
+                        android:layout_marginTop="@dimen/space_1"
+                        android:layout_toRightOf="@id/center"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_balerina_white"
+                        android:visibility="invisible" />
+
+                    <LinearLayout
+                        android:id="@+id/center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/space_15"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/linPoint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtPoint"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/space_5"
+                                    android:layout_marginBottom="@dimen/space_5"
+                                    android:text="14"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/space_40"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/ic_point_white" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/space_1"
+                                    android:text="Points"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linUnit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/space_25"
+                                android:alpha="0.5"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtUnit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/space_5"
+                                    android:layout_marginBottom="@dimen/space_5"
+                                    android:text="12"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/space_40"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/ic_unit_white" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/space_1"
+                                    android:text="Units"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:text="Κόλλησες και δεν χάνεις βάρος;\n Άλλαξε το σύστημα σου, με ένα κλικ"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="ΣΩΜΑΤΙΚΟ ΛΙΠΟΣ"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_130"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/back_body_fat"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_15"
+                        android:text="Το ποσοστό λίπους σας είναι "
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/space_90"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_5"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_body_fat" />
+
+                        <TextView
+                            android:id="@+id/txtBFP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="@dimen/space_5"
+                            android:layout_marginRight="5dp"
+                            android:text="0.7%"
+                            android:textColor="@android:color/black"
+                            android:textSize="27sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="ΙΔΑΝΙΚΟ ΒΑΡΟΣ"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_100"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/back_ideal_weight_bg"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_15"
+                        android:text="Το ιδανικό σου βάρος είναι:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtIDW"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_15"
+                            android:text="97,0 Kg"
+                            android:textColor="@android:color/black"
+                            android:textSize="27sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="ΔΕΙΚΤΗΣ ΜΑΖΑ ΣΩΜΑΤΟΣ"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_120"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/back_bg"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:text="Ο ΔΜΣ σου είναι:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtBMI"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_15"
+                            android:text="24,9"
+                            android:textColor="@android:color/black"
+                            android:textSize="27sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtBMIText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:text="Φυσιολογικός"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/meal_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="ΔΙΑΤΡΟΦΗ"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <!--cell start-->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/space_100"
+                                android:background="@drawable/back_container"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/space_5">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/space_18"
+                                        android:layout_height="@dimen/space_18"
+                                        android:layout_marginLeft="@dimen/space_5"
+                                        android:src="@drawable/ic_timer" />
+
+                                    <TextView
+                                        android:id="@+id/txtTimerBreakFast"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/space_30"
+                                        android:text="10:00"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="11sp" />
+
+                                    <Button
+                                        android:layout_width="@dimen/space_50"
+                                        android:layout_height="@dimen/space_15"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginRight="@dimen/space_5"
+                                        android:background="#707070"
+                                        android:text="ΠΡΩΙΝΟ"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="6sp" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/linAddBreakfast"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_gravity="center_horizontal"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_15"
+                                            android:layout_height="@dimen/space_15"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_add" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/space_7"
+                                            android:text="Προσθήκη"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linCheckedBreakfast"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginRight="20dp"
+                                        android:visibility="gone">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_35"
+                                            android:layout_height="wrap_content"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_checkmark" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginLeft="5dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/txtBreakfastProtein"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtBreakfastCarbon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtBreakfastFat"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/txtPointBreakfast"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_3"
+                                android:text=" 2 Points"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp" />
+                        </LinearLayout><!--cell end-->
+                        <!--cell start-->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_20"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/space_100"
+                                android:background="@drawable/back_container"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/space_5">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/space_18"
+                                        android:layout_height="@dimen/space_18"
+                                        android:layout_marginLeft="@dimen/space_5"
+                                        android:src="@drawable/ic_timer" />
+
+                                    <TextView
+                                        android:id="@+id/txtTimerSnackBreakfast"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/space_30"
+                                        android:text="10:00"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="11sp" />
+
+                                    <Button
+                                        android:layout_width="@dimen/space_50"
+                                        android:layout_height="@dimen/space_15"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginRight="@dimen/space_5"
+                                        android:background="#707070"
+                                        android:text="ΔΕΚΑΤΙΑΝΟ"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="6sp" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/linAddSnackBreakfast"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_gravity="center_horizontal"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_15"
+                                            android:layout_height="@dimen/space_15"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_add" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/space_7"
+                                            android:text="Προσθήκη"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linCheckedSnackBreakfast"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginRight="20dp"
+                                        android:visibility="gone">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_35"
+                                            android:layout_height="wrap_content"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_checkmark" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginLeft="5dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/txtSnackBreakfastProtein"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtSnackBreakfastCarbon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtSnackBreakfastFat"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtPointSnackBreakfast"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_3"
+                                android:text=" 0 Points"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp" />
+                        </LinearLayout><!--cell end-->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_20">
+                        <!--cell start-->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/space_100"
+                                android:background="@drawable/back_container"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/space_5">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/space_18"
+                                        android:layout_height="@dimen/space_18"
+                                        android:layout_marginLeft="@dimen/space_5"
+                                        android:src="@drawable/ic_timer" />
+
+                                    <TextView
+                                        android:id="@+id/txtTimerLunch"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/space_30"
+                                        android:text="10:00"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="11sp" />
+
+                                    <Button
+                                        android:layout_width="@dimen/space_50"
+                                        android:layout_height="@dimen/space_15"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginRight="@dimen/space_5"
+                                        android:background="#707070"
+                                        android:text="ΜΕΣΗΜΕΡΙΑΝΟ"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="6sp" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/linAddLunch"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_gravity="center_horizontal"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_15"
+                                            android:layout_height="@dimen/space_15"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_add" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/space_7"
+                                            android:text="Προσθήκη"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linCheckedLunch"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginRight="20dp"
+                                        android:visibility="gone">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_35"
+                                            android:layout_height="wrap_content"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_checkmark" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginLeft="5dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/txtLunchProtein"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtLunchCarbon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtLunchFat"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtPointLunch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_3"
+                                android:text=" 0 Points"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp" />
+                        </LinearLayout><!--cell end-->
+                        <!--cell start-->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_20"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/space_100"
+                                android:background="@drawable/back_container"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/space_5">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/space_18"
+                                        android:layout_height="@dimen/space_18"
+                                        android:layout_marginLeft="@dimen/space_5"
+                                        android:src="@drawable/ic_timer" />
+
+                                    <TextView
+                                        android:id="@+id/txtTimerSnackLunch"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/space_30"
+                                        android:text="05:00"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="11sp" />
+
+                                    <Button
+                                        android:layout_width="@dimen/space_50"
+                                        android:layout_height="@dimen/space_15"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginRight="@dimen/space_5"
+                                        android:background="#707070"
+                                        android:text="ΑΠΟΓΕΥΜΑΤΙΝΟ"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="6sp" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/linAddSnackLunch"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_gravity="center_horizontal"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_15"
+                                            android:layout_height="@dimen/space_15"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_add" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/space_7"
+                                            android:text="Προσθήκη"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linCheckedSnackLunch"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginRight="20dp"
+                                        android:visibility="gone">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_35"
+                                            android:layout_height="wrap_content"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_checkmark" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginLeft="5dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/txtSnackLunchProtein"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtSnackLunchCarbon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtSnackLunchFat"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtPointSnackLunch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_3"
+                                android:text=" 0 Points"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp" />
+                        </LinearLayout><!--cell end-->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_20">
+                        <!--cell start-->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/space_100"
+                                android:background="@drawable/back_container"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/space_5">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/space_18"
+                                        android:layout_height="@dimen/space_18"
+                                        android:layout_marginLeft="@dimen/space_5"
+                                        android:src="@drawable/ic_timer" />
+
+                                    <TextView
+                                        android:id="@+id/txtTimerDinner"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/space_30"
+                                        android:text="10:00"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="11sp" />
+
+                                    <Button
+                                        android:layout_width="@dimen/space_50"
+                                        android:layout_height="@dimen/space_15"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginRight="@dimen/space_5"
+                                        android:background="#707070"
+                                        android:text="ΒΡΑΔΥΝΟ"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="6sp" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/linAddDinner"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_gravity="center_horizontal"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_15"
+                                            android:layout_height="@dimen/space_15"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_add" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/space_7"
+                                            android:text="Προσθήκη"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linCheckedDinner"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginRight="20dp"
+                                        android:visibility="gone">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_35"
+                                            android:layout_height="wrap_content"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_checkmark" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginLeft="5dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/txtDinnerProtein"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtDinnerCarbon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtDinnerFat"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtPointDinner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_3"
+                                android:text=" 0 Points"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp" />
+                        </LinearLayout><!--cell end-->
+                        <!--cell start-->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_20"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/space_100"
+                                android:background="@drawable/back_container"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/space_5">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/space_18"
+                                        android:layout_height="@dimen/space_18"
+                                        android:layout_marginLeft="@dimen/space_5"
+                                        android:src="@drawable/ic_timer" />
+
+                                    <TextView
+                                        android:id="@+id/txtTimerSnackDinner"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/space_30"
+                                        android:text="05:00"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="11sp" />
+
+                                    <Button
+                                        android:layout_width="@dimen/space_50"
+                                        android:layout_height="@dimen/space_15"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginRight="@dimen/space_5"
+                                        android:background="#707070"
+                                        android:text="ΠΡΟ ΥΠΝΟΥ"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="6sp" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/linAddSnackDinner"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_gravity="center_horizontal"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:visibility="visible">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_15"
+                                            android:layout_height="@dimen/space_15"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_add" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/space_7"
+                                            android:text="Προσθήκη"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linCheckedSnackDinner"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginRight="20dp"
+                                        android:visibility="gone">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_35"
+                                            android:layout_height="wrap_content"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ic_checkmark" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginLeft="5dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/txtSnackDinnerProtein"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtSnackDinnerCarbon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:id="@+id/txtSnackDinnerFat"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=""
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtPointSnackDinner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_3"
+                                android:text=" 0 Points"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp" />
+                        </LinearLayout><!--cell end-->
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!--weight measurement-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="ΜΕΤΡΗΣΗ ΒΑΡΟΥΣ"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_140"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/back_weight_bg"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_15"
+                        android:text="Κιλά"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Στόχος:"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/txtGoalWeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=" 87.0 Kg"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_20">
+
+                        <ImageView
+                            android:id="@+id/imgSubtractWeight"
+                            android:layout_width="@dimen/space_30"
+                            android:layout_height="@dimen/space_30"
+                            android:layout_marginTop="@dimen/space_5"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_subtract_white" />
+
+                        <TextView
+                            android:id="@+id/txtCurrentWeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="@dimen/space_30"
+                            android:text="98.0"
+                            android:textColor="@android:color/white"
+                            android:textSize="27sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text=" Kg"
+                            android:textColor="@android:color/white"
+                            android:textSize="27sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imgAddWeight"
+                            android:layout_width="@dimen/space_30"
+                            android:layout_height="@dimen/space_30"
+                            android:layout_marginLeft="@dimen/space_30"
+                            android:layout_marginTop="@dimen/space_5"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_add_white" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!--weight end-->
+            <!--water drink-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="ΠΑΡΑΚΟΛΟΥΘΗΣΗ ΝΕΡΟΥ"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_250"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/back_water_bg"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_15"
+                        android:text="Νερό"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Στόχος:"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=" 2.00 λίτρα"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/water_L"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_15"
+                        android:text="0.25 L"
+                        android:textColor="@android:color/white"
+                        android:textSize="27sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginRight="@dimen/space_15">
+
+                        <ImageView
+                            android:id="@+id/water1"
+                            android:layout_width="@dimen/space_40"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_water_cup_full" />
+
+                        <ImageView
+                            android:id="@+id/water2"
+                            android:layout_width="@dimen/space_40"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_8"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_water_cup_empty_plus" />
+
+                        <ImageView
+                            android:id="@+id/water3"
+                            android:layout_width="@dimen/space_40"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_8"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_water_cup_empty" />
+
+                        <ImageView
+                            android:id="@+id/water4"
+                            android:layout_width="@dimen/space_40"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_8"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_water_cup_empty" />
+
+                        <ImageView
+                            android:id="@+id/water5"
+                            android:layout_width="@dimen/space_40"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_8"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_water_cup_empty" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_20"
+                        android:layout_marginRight="@dimen/space_15">
+
+                        <ImageView
+                            android:id="@+id/water6"
+                            android:layout_width="@dimen/space_40"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_water_cup_empty" />
+
+                        <ImageView
+                            android:id="@+id/water7"
+                            android:layout_width="@dimen/space_40"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_8"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_water_cup_empty" />
+
+                        <ImageView
+                            android:id="@+id/water8"
+                            android:layout_width="@dimen/space_40"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_8"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_water_cup_empty" />
+
+                        <ImageView
+                            android:layout_width="@dimen/space_40"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_8"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_water_cup_empty"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:layout_width="@dimen/space_40"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_8"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_water_cup_empty"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!--water end-->
+
+            <!--warning start-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="ΕΒΔ. ΚΑΤΑΝΑΛΩΣΗ ΓΕΥΜΑΤΩΝ"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="#E4E1E1"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/space_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_10"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginRight="@dimen/space_10">
+
+                        <ImageView
+                            android:layout_width="@dimen/space_50"
+                            android:layout_height="@dimen/space_50"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_all_meats" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/space_20"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ΓΕΥΜΑΤΑ ΜΕ ΚΡΕΑΣ"
+                                android:textColor="@android:color/black"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Περιορίσου στην κατανάλωση κρέατος
+μόνο 2-3 φορές την εβδομάδα."
+                                android:textColor="@android:color/black"
+                                android:textSize="8sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/space_50"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_10">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="2"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="@dimen/space_40"
+                                android:layout_height="@dimen/space_40"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/space_3"
+                                android:src="@drawable/ic_warning"
+                                android:visibility="invisible" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_10"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginRight="@dimen/space_10">
+
+                        <ImageView
+                            android:layout_width="@dimen/space_50"
+                            android:layout_height="@dimen/space_50"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_oily_food" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/space_20"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ΓΕΥΜΑΤΑ ΜΕ ΛΑΔΕΡΑ"
+                                android:textColor="@android:color/black"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Περιορίσου στην κατανάλωση λαδερών
+μόνο 2 φορές την εβδομάδα."
+                                android:textColor="@android:color/black"
+                                android:textSize="8sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/space_50"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_10">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="3"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="@dimen/space_40"
+                                android:layout_height="@dimen/space_40"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/space_3"
+                                android:src="@drawable/ic_warning"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_10"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginRight="@dimen/space_10">
+
+                        <ImageView
+                            android:layout_width="@dimen/space_50"
+                            android:layout_height="@dimen/space_50"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_beans" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/space_20"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ΓΕΥΜΑΤΑ ΜΕ ΟΣΠΡΙΑ"
+                                android:textColor="@android:color/black"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Περιορίσου στην κατανάλωση όσπριων μόνο 1 φορά την εβδομάδα."
+                                android:textColor="@android:color/black"
+                                android:textSize="8sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/space_50"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_10">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="2"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="@dimen/space_40"
+                                android:layout_height="@dimen/space_40"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/space_3"
+                                android:src="@drawable/ic_warning"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_10"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginRight="@dimen/space_10">
+
+                        <ImageView
+                            android:layout_width="@dimen/space_50"
+                            android:layout_height="@dimen/space_50"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_pasta" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/space_20"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ΓΕΥΜΑΤΑ ΜΕ ΖΥΜΑΡΙΚΑ"
+                                android:textColor="@android:color/black"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Περιορίσου στην κατανάλωση όσπριων μόνο 1 φορά την εβδομάδα."
+                                android:textColor="@android:color/black"
+                                android:textSize="8sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/space_50"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_10">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="0"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="@dimen/space_40"
+                                android:layout_height="@dimen/space_40"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/space_3"
+                                android:src="@drawable/ic_warning"
+                                android:visibility="invisible" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5">
+
+                    <ImageView
+                        android:layout_width="@dimen/space_25"
+                        android:layout_height="@dimen/space_25"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/space_20"
+                        android:src="@drawable/ic_warning" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/space_5"
+                        android:text="Προσοχή! Δεν τηρείται την σωστή κατανομή τροφών."
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--warning end-->
+
+            <!--apple start-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="ΠΑΡΑΚΟΛΟΥΘΗΣΗ ΦΡΟΥΤΟΥ"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_230"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/back_fruit_bg"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_15"
+                        android:text="Φρούτα"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Στόχος:"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=" 2 φρούτα την ημέρα"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/apple_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/space_20"
+                        android:text="1 φ."
+                        android:textColor="@android:color/black"
+                        android:textSize="27sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="@dimen/space_200"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/space_15"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginRight="@dimen/space_15">
+
+                        <ImageView
+                            android:id="@+id/fruit1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_apple_eaten" />
+
+                        <ImageView
+                            android:id="@+id/fruit2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_20"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_apple_plus" />
+
+                        <ImageView
+                            android:id="@+id/fruit3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_20"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_apple_idle" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!--apple end-->
+            <!--Olive start-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="ΠΑΡΑΚΟΛΟΥΘΗΣΗ ΕΛΑΙΟΛΑΔΟΥ"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/back_olive_oil_success_bg" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--olive end-->
+            <!--fastfood start-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="ΕΠΙΚΙΝΔΥΝΑ ΛΙΠΑΡΑ"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/back_fastfood_success_bg" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--fastfood end-->
+
+            <!--chart start-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="Τελευταίες 30 Ημέρες"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:orientation="vertical">
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graph"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Αρχικό Βάρος: "
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txtInitialWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="102.2 Kg"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ιδανικό Βάρος: "
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txtIdealWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="97.0 Kg"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Σημερινό Βάρος: "
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txtTodayWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="102.0 Kg"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:layout_marginBottom="@dimen/space_15">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Διαφορά: "
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txtWeightDiff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-0.2 Kg"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--chart end-->
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:background="@drawable/back_shadow" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_60"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgMain"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_40"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/space_30"
+            android:layout_weight="1"
+            android:src="@drawable/ic_diary_icon3" />
+
+        <ImageView
+            android:id="@+id/imgRecipe"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_40"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:src="@drawable/ic_recipes_icon3" />
+
+        <ImageView
+            android:id="@+id/imgSetting"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_40"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:src="@drawable/ic_settings_icon3" />
+
+        <ImageView
+            android:id="@+id/imgHelp"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_40"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_30"
+            android:layout_weight="1"
+            android:src="@drawable/ic_help_icon2" />
+    </LinearLayout>
+</LinearLayout>
